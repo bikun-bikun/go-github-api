@@ -9,53 +9,53 @@ import (
 type Issue struct {
 	Action string `json:"action"`
 	Issue  struct {
-		URL               string        `json:"url"`
-		RepositoryURL     string        `json:"repository_url"`
-		LabelsURL         string        `json:"labels_url"`
-		CommentsURL       string        `json:"comments_url"`
-		EventsURL         string        `json:"events_url"`
-		HTMLURL           string        `json:"html_url"`
-		ID                int           `json:"id"`
-		NodeID            string        `json:"node_id"`
-		Number            int           `json:"number"`
-		Title             string        `json:"title"`
-		User              user.User     `json:"user"`
-		Labels            []Label       `json:"labels"`
-		State             string        `json:"state"`
-		Locked            bool          `json:"locked"`
-		Assignee          interface{}   `json:"assignee"`
-		Assignees         []interface{} `json:"assignees"`
-		Milestone         interface{}   `json:"milestone"`
-		Comments          int           `json:"comments"`
-		CreatedAt         time.Time     `json:"created_at"`
-		UpdatedAt         time.Time     `json:"updated_at"`
-		ClosedAt          interface{}   `json:"closed_at"`
-		AuthorAssociation string        `json:"author_association"`
-		Body              string        `json:"body"`
-	} `json:"issue"`
+		URL               string        `json:"url,omitempty"`
+		RepositoryURL     string        `json:"repository_url,omitempty"`
+		LabelsURL         string        `json:"labels_url,omitempty"`
+		CommentsURL       string        `json:"comments_url,omitempty"`
+		EventsURL         string        `json:"events_url,omitempty"`
+		HTMLURL           string        `json:"html_url,omitempty"`
+		ID                int           `json:"id,omitempty"`
+		NodeID            string        `json:"node_id,omitempty"`
+		Number            int           `json:"number,omitempty"`
+		Title             string        `json:"title,omitempty"`
+		User              user.User     `json:"user,omitempty"`
+		Labels            []Label       `json:"labels,omitempty"`
+		State             string        `json:"state,omitempty"`
+		Locked            bool          `json:"locked,omitempty"`
+		Assignee          interface{}   `json:"assignee,omitempty"`
+		Assignees         []interface{} `json:"assignees,omitempty"`
+		Milestone         interface{}   `json:"milestone,omitempty"`
+		Comments          int           `json:"comments,omitempty"`
+		CreatedAt         time.Time     `json:"created_at,omitempty"`
+		UpdatedAt         time.Time     `json:"updated_at,omitempty"`
+		ClosedAt          interface{}   `json:"closed_at,omitempty"`
+		AuthorAssociation string        `json:"author_association,omitempty"`
+		Body              string        `json:"body,omitempty"`
+	} `json:"issue,omitempty"`
 	Changes struct {
-	} `json:"changes"`
-	Repository repository.Repository `json:"repository"`
-	Sender     Sender                `json:"sender"`
+	} `json:"changes,omitempty"`
+	Repository repository.Repository `json:"repository,omitempty"`
+	Sender     Sender                `json:"sender,omitempty"`
 }
 
 type Sender struct {
-	Login             string `json:"login"`
-	ID                int    `json:"id"`
-	NodeID            string `json:"node_id"`
-	AvatarURL         string `json:"avatar_url"`
-	GravatarID        string `json:"gravatar_id"`
-	URL               string `json:"url"`
-	HTMLURL           string `json:"html_url"`
-	FollowersURL      string `json:"followers_url"`
-	FollowingURL      string `json:"following_url"`
-	GistsURL          string `json:"gists_url"`
-	StarredURL        string `json:"starred_url"`
-	SubscriptionsURL  string `json:"subscriptions_url"`
-	OrganizationsURL  string `json:"organizations_url"`
-	ReposURL          string `json:"repos_url"`
-	EventsURL         string `json:"events_url"`
-	ReceivedEventsURL string `json:"received_events_url"`
-	Type              string `json:"type"`
-	SiteAdmin         bool   `json:"site_admin"`
+	Login             string `json:"login,omitempty"`
+	ID                int    `json:"id,omitempty"`
+	NodeID            string `json:"node_id,omitempty"`
+	AvatarURL         string `json:"avatar_url,omitempty"`
+	GravatarID        string `json:"gravatar_id,omitempty"`
+	URL               string `json:"url,omitempty"`
+	HTMLURL           string `json:"html_url,omitempty"`
+	FollowersURL      string `json:"followers_url,omitempty"`
+	FollowingURL      string `json:"following_url,omitempty"`
+	GistsURL          string `json:"gists_url,omitempty"`
+	StarredURL        string `json:"starred_url,omitempty"`
+	SubscriptionsURL  string `json:"subscriptions_url,omitempty"`
+	OrganizationsURL  string `json:"organizations_url,omitempty"`
+	ReposURL          string `json:"repos_url,omitempty"`
+	EventsURL         string `json:"events_url,omitempty"`
+	ReceivedEventsURL string `json:"received_events_url,omitempty"`
+	Type              string `json:"type,omitempty"`
+	SiteAdmin         bool   `json:"site_admin,omitempty"`
 }
